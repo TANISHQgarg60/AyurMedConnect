@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Chat Interface</title>
+</head>
+<body>
+    <h1>OpenAI Chat Interface</h1>
+    
+    <form id="chat-form">
+        <label for="message">Enter your message:</label><br>
+        <input type="text" id="message" name="message"><br>
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="response-container"></div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var message = document.getElementById('message').value;
+
+            // Call Flask endpoint to process the message
+            fetch('/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response-container').innerHTML = '<h2>Response:</h2><p>' + data + '</p>';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

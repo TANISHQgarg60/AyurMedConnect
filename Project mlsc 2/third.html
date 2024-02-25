@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="third.css">
+
+    <style>
+        /* Style for the logout button */
+        .logout-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999; /* Ensures button stays on top */
+        }
+
+        .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Additional styles to prevent overlapping with header */
+        header {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AVAILABLE DOCTORS</h1>
+        <!-- Logout button -->
+        <a href="first.html" class="logout-btn">Logout</a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="second.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="gallery">
+        <div class="photo">
+            <img src="doc1.jpeg" alt="Photo 1">
+            <p>Dr. Diya Gupta</p>
+            <a href="video_call_link_for_doc1"><button>Video Call</button></a>
+        </div>
+        <div class="photo">
+            <img src="doc2.jpeg" alt="Photo 2">
+            <p>Dr. Tanishq Garg</p>
+            <a href="video_call_link_for_doc2"><button>Video Call</button></a>
+        </div>
+        <div class="photo">
+            <img src="doc3.jpeg" alt="Photo 3">
+            <p>Dr. Dhruvika Sanmotra</p>
+            <a href="video_call_link_for_doc3"><button>Video Call</button></a>
+        </div>
+    </div>
+     <!-- Your website content goes here -->
+
+    <!-- Script tag to incorporate the chatbot -->
+    <script src="https://www.socialintents.com/api/chat/socialintents.1.3.js#2c9fab358dd400e9018ddcefe3340b6f" async="async"></script>
+
+    <script>
+        function logout() {
+            // Write your logout logic here
+            alert("Logged out successfully!");
+            // Example: Redirect to login page
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>
