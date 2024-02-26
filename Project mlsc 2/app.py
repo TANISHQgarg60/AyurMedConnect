@@ -4,7 +4,7 @@ import openai
 app = Flask(__name__)
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = 'add api key'
 
 def get_api_response(message):
     # Prepend the prompt to the message
